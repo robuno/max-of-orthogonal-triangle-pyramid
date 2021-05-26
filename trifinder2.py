@@ -1,22 +1,3 @@
-def removefirstdigit(number):
-    strnumber = str(number)
-    if strnumber[0] == "0":
-        strnumber = strnumber[1:]
-        number2 = int(strnumber)
-        return number2
-    else:
-        return number
-
-def isprime(number):
-    if number > 1:
-        for i in range(2,int((number/2)+1)):
-            if (number % i) == 0:  #is not prime
-                return False
-        else:                      #is  prime
-            return True
-    else:
-        return False
-
 def main():
     openinput = open("triinput.txt", "r")
     inputlines = openinput.read().splitlines()
@@ -37,7 +18,7 @@ def main():
             else:
                 t+=1
         k+=1
-
+    #print(triarray)
     sum = 0
     flag= 0
     for i in range(len(triarray)):
@@ -65,7 +46,28 @@ def main():
         else:
             break
 
-    print(sum)            
+    print(sum) 
+
+def removefirstdigit(number):
+    strnumber = str(number)
+    if strnumber[0] == "0":
+        strnumber = strnumber[1:]
+        number2 = int(strnumber)
+        return number2
+    else:
+        return number
+
+def isprime(number):
+    if number > 1:
+        for i in range(2,int((number/2)+1)):
+            if (number % i) == 0:  #is not prime
+                return False
+        else:                      #is  prime
+            return True
+    else:
+        return False
+      
 
 if __name__ == "__main__":
+    
     main()
